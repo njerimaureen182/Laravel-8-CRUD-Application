@@ -64,9 +64,12 @@
         @endforeach   
     </table>
 
-    <div class=" mr-5 mt-5 text-left">
-        <a href="{{ route('logout') }}" class="btn btn-primary">Log Out</a>
-    </div>
+    <br>
+
+    <form action="{{ route('logout') }}" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
 
 
     {!! $students->links() !!}

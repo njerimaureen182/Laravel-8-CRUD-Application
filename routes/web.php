@@ -17,6 +17,12 @@ use App\Http\Controllers\StudentController;
 Route::get('students/index', 'StudentController@index');
 Route::resource('students', StudentController::class);
 
+Route::get('/', function ()
+{
+    return view('index');
+});
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
